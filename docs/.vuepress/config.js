@@ -23,9 +23,15 @@ module.exports = {
   themeConfig: {
     nav: [
       { text: '主页', link: '/' },
-      { text: '前端', link: '/web/' }, // 内部链接 以docs为根目录
       { text: '安卓', link: '/android/' }, // 外部链接
       // 下拉列表
+      {
+        text: '前端',
+        items: [
+          { text: 'vue', link: '/vue/' },
+          { text: 'vant', link: '/vant/' },
+        ]
+      },
       {
         text: 'iOS',
         items: [
@@ -40,11 +46,7 @@ module.exports = {
       {
         text: 'weex',
         items: [
-          { text: '科蓝平台', link: '/kelanSDK/' },
-          {
-            text: '官方SDK',
-            link: '/weexSDK/'
-          }
+          { text: 'weex', link: '/weex/' },
         ]
       },
       { text: 'Vuepress', link: '/vuepress/' }, // 外部链接    
@@ -52,25 +54,37 @@ module.exports = {
     ],
 
     /* 
-      nav中的link地址,比如/web/目录下,必须要有个README文件,不然会报错400或404
+      nav中的link地址,比如/vue/目录下,必须要有个README文件,不然会报错400或404
       sidebar只是添加侧边栏,
     */
     sidebar: {
-
-      '/web/': [
+      '/vant/': [
+        {
+          title: '目录:',
+          children: [
+            {
+              title:'Bug集合',
+              children: [
+                '/vant/01',
+              ]
+            },
+          ]
+        },
+      ],
+      '/vue/': [
         {
           title: '目录:',
           children: [
             {
               title:'修饰符',
               children: [
-                '/web/01',
+                '/vue/01',
               ]
             },
             {
               title:'常见问题',
               children: [
-                '/web/02',
+                '/vue/02',
               ]
             },
           ]
@@ -84,6 +98,19 @@ module.exports = {
               title:'相关资源',
               children: [
                 '/vuepress/01',
+              ]
+            }
+          ]
+        },
+      ],
+      '/weex/': [
+        {
+          title: '目录:',
+          children: [
+            {
+              title:'科蓝平台',
+              children: [
+                '/weex/01',
               ]
             }
           ]
@@ -104,7 +131,13 @@ module.exports = {
               children: [
                 '/ios/02',
               ]
-            }
+            },
+            {
+              title:'Bug集合',
+              children: [
+                '/ios/03',
+              ]
+            },
           ]
         },
       ],
