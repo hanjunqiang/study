@@ -11,7 +11,7 @@ module.exports = {
   ],
   // base 设置为根目录文件名即可,即docs文件所在的文件名, 图片会用到这个base, 好像页面加载和这个base没有太大的关系
   //$withBase(/logo.jpg)会直接访问到study/docs/.vuepress/public/下
-  base: '/study/', // 这是部署到github相关的配置 下面会讲
+  base: '/study/dist/', // 这是部署到github相关的配置 下面会讲
   markdown: {
     lineNumbers: true // 代码块显示行号
   },
@@ -21,13 +21,6 @@ module.exports = {
   //   lastUpdated: 'Last Updated' // 文档更新时间：每个文件git最后提交的时间
   // }
   themeConfig: {
-    output: {
-      path: config.build.assetsRoot,
-      filename: '[name].js',
-      publicPath: process.env.NODE_ENV === 'production'
-        ? config.build.assetsPublicPath
-        : config.dev.assetsPublicPath
-      },
     //algolia需要添加配置,比较麻烦,暂时不弄了,这里是参考地址:
     //https://www.vuepress.cn/theme/default-theme-config.html#algolia-%E6%90%9C%E7%B4%A2
     //https://www.cnblogs.com/tmlh/p/10452235.html
