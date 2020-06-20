@@ -21,6 +21,14 @@ module.exports = {
   //   lastUpdated: 'Last Updated' // 文档更新时间：每个文件git最后提交的时间
   // }
   themeConfig: {
+    //algolia需要添加配置,比较麻烦,暂时不弄了,这里是参考地址:
+    //https://www.vuepress.cn/theme/default-theme-config.html#algolia-%E6%90%9C%E7%B4%A2
+    //https://www.cnblogs.com/tmlh/p/10452235.html
+    //https://www.algolia.com/apps/4YBM9CM6GB/api-keys/all
+    // algolia: {
+    //   apiKey: 'a34ca8a23010dc679f1f892a87962ad7',
+    //   indexName: 'blog'
+    // },
     nav: [
       { text: '主页', link: '/' },
       { text: '安卓', link: '/android/' }, // 外部链接
