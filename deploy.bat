@@ -12,11 +12,3 @@ git remote add origin https://github.com/hanjunqiang/study.git
 git pull
 git push --force origin HEAD:gh-pages
 
-REM To delete the dist folder
-cd ..
-echo delete-directory: "%cd%/dist"
-rmdir /s /q "%cd%/dist"
-cd..
-cd..
-echo Auto-Deploy-Complete!
-pause
