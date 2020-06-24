@@ -36,6 +36,7 @@ module.exports = {
       {
         text: '前端',
         items: [
+          { text: 'web', link: '/web/' },
           { text: 'vue', link: '/vue/' },
           { text: 'vant', link: '/vant/' },
         ]
@@ -74,6 +75,19 @@ module.exports = {
               title:'Bug集合',
               children: [
                 '/vant/01',
+              ]
+            },
+          ]
+        },
+      ],
+      '/web/': [
+        {
+          title: '目录:',
+          children: [
+            {
+              title:'公众平台服务号、订阅号、企业微信、小程序的相关说明',
+              children: [
+                '/web/',
               ]
             },
           ]
