@@ -12,7 +12,7 @@ module.exports = {
   // base 设置为根目录文件名即可,即docs文件所在的文件名, 图片会用到这个base, 好像页面加载和这个base没有太大的关系
   //$withBase(/logo.jpg)会直接访问到study/docs/.vuepress/public/下
   //'/study/dist/'
-  base: '/study/', // 这是部署到github相关的配置 下面会讲
+  base: '/study/dist/', // 这是部署到github相关的配置 下面会讲
   markdown: {
     lineNumbers: true // 代码块显示行号
   },
