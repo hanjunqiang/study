@@ -36,6 +36,7 @@ module.exports = {
       // 下拉列表
       {
         text: '前端',
+        link: '/vuepress/',
         items: [
           { text: 'css', link: '/css/' },
           { text: 'vue', link: '/vue/' },
