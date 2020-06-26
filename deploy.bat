@@ -10,4 +10,4 @@ git add -A
 git commit -m 'auto-deploy'
 git remote add origin https://github.com/hanjunqiang/study.git
 git pull
-git push -f git@github.com:hanjunqiang/hanjunqiang.github.io.git master
+git push -f git@github.com:hanjunqiang/hanjunqiang/study.git master
