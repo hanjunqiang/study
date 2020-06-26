@@ -11,8 +11,8 @@ module.exports = {
   ],
   // base 设置为根目录文件名即可,即docs文件所在的文件名, 图片会用到这个base, 好像页面加载和这个base没有太大的关系
   //$withBase(/logo.jpg)会直接访问到study/docs/.vuepress/public/下
-  //'/study/dist/'
-  base: '/study/dist/', // 这是部署到github相关的配置 下面会讲
+  //buguo '/study/dist/'
+  base: '/study/', // 这是部署到github相关的配置 下面会讲
   markdown: {
     lineNumbers: true // 代码块显示行号
   },
@@ -36,7 +36,7 @@ module.exports = {
       // 下拉列表
       {
         text: '前端',
-        link: '/vuepress/',
+        link: '/web/',
         items: [
           { text: 'css', link: '/css/' },
           { text: 'vue', link: '/vue/' },
@@ -69,6 +69,7 @@ module.exports = {
       sidebar只是添加侧边栏,
     */
     sidebar: {
+      '/web/': ['/'],
       '/vant/': [
         {
           title: '目录:',
@@ -99,6 +100,12 @@ module.exports = {
         {
           title: '目录:',
           children: [
+            {
+              title:'新项目-配置',
+              children: [
+                '/vue/',
+              ]
+            },
             {
               title:'修饰符',
               children: [
