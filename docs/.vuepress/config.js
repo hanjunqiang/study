@@ -8,7 +8,86 @@ module.exports = {
   // 注入到当前页面的 HTML <head> 中的标签
   head: [
     ['link', { rel: 'icon', href: '/logo.jpg' }], // 增加一个自定义的 favicon(网页标签的图标)
+      // 移动栏优化
+    ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }],
+
+/* ----------------------------------------------------------------------------------------------
+                                             这里是鼠标选中
+  ----------------------------------------------------------------------------------------------*/
+    // 引入jquery
+    ["script", {
+      "language": "javascript",
+      "type": "text/javascript",
+      "src": "https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"
+    }],
+    // 引入鼠标点击脚本
+    ["script", {
+      "language": "javascript",
+      "type": "text/javascript",
+      "src": "/js/MouseClickEffect.js"
+    }]
   ],
+
+  // theme: 'vdoing',
+
+  /* ----------------------------------------------------------------------------------------------
+                                             插件
+  ----------------------------------------------------------------------------------------------*/
+  plugins:[
+    // 代码复制弹窗插件
+    ['one-click-copy', {
+      copySelector: ['div[class*="language-"] pre', 'div[class*="aside-code"] aside'], // String or Array
+      copyMessage: 'copy💗成功!', // default is 'Copy successfully and then paste it for use.'
+      duration: 500, // prompt message display time.
+      showInMobile: false // whether to display on the mobile side, default: false.
+    }],
+    // 背景有个彩带(可能被内容遮盖住)
+    [
+      "ribbon",
+      {
+        size: 90,     // width of the ribbon, default: 90
+        opacity: 0.8, // opacity of the ribbon, default: 0.3
+        zIndex: -1    // z-index property of the background, default: -1
+      }
+    ],
+    ['go-top'],
+    // 音乐插件
+    ['meting', {
+      //metingApi: "https://meting.sigure.xyz/api/music",
+      meting: {
+        // 网易
+        server: "netease",
+        // 读取歌单
+        type: "playlist",
+        mid: "696441716",
+      },          
+      // 不配置该项的话不会出现全局播放器
+      aplayer: {
+        // 吸底模式
+        fixed: true,
+        mini: true,
+        // 自动播放
+        autoplay: false,
+        // 歌曲栏折叠
+        listFolded:true,
+        // 颜色
+        theme: '#f9bcdd',
+        // 播放顺序为随机
+        order: 'random',
+        // 初始音量
+        volume: 0.1,
+        // 关闭歌词显示
+        lrcType: 0
+      },
+      mobile :{
+        // 手机端去掉cover图
+        cover: false,
+      }
+    }]
+  ],
+
+
+
   // base 设置为根目录文件名即可,即docs文件所在的文件名, 图片会用到这个base, 好像页面加载和这个base没有太大的关系
   //$withBase(/logo.jpg)会直接访问到study/docs/.vuepress/public/下
   //buguo '/study/dist/'
@@ -17,6 +96,7 @@ module.exports = {
     lineNumbers: true // 代码块显示行号
   },
   dest: './dist',
+ 
   // themeConfig: {
   //   sidebarDepth: 2, // e'b将同时提取markdown中h2 和 h3 标题，显示在侧边栏上。
   //   lastUpdated: 'Last Updated' // 文档更新时间：每个文件git最后提交的时间
@@ -175,3 +255,4 @@ module.exports = {
     }
   }
 };
+
