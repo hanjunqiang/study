@@ -9,7 +9,7 @@ tags:
 ---
 
 <!-- 自动生成目录 -->
-
+[[toc]] 
 
 ## VuePress相关资源
 [参考1:](https://cloud.tencent.com/developer/article/1458494)
@@ -30,17 +30,37 @@ vuepress dev docs
 vuepress build docs
 ```
 
-## 打包和部署
+## 打包和部署([问题1](#wenti1))
 `执行该命令可直接打包&部署到GitHub,是因为安装配置了前提条件中插件`
 ```js
 cnpm run deploy:build;
 ```
 
-<img style="margin-top:10px" :src="$withBase('/vuepress/01.jpg')" alt="暂无图片">
 
 ::: details 前提条件
 <img style="margin-top:10px" :src="$withBase('/vuepress/01.jpg')" alt="暂无图片">
 <br>
+:::
+
+
+
+::: details <span id="wenti1">问题1</span>
+`sh: gh-pages: command not found`
+<img style="margin-top:10px" :src="$withBase('/vuepress/03.jpg')" alt="暂无图片">
+<br>
+
+::: danger 解决方案:
+<br>
+
+- 删除依赖 (node_modules)
+- 执行命令: <br>
+`npm install (可先不执行该步)` <br>
+cnpm install gh-pages --save-dev
+- 再次执行打包部署命令 <br>
+cnpm run deploy:build;
+
+:::
+
 :::
 
 内容<sup style="color:red;padding:0px 3px;margin-left:2px;border:1px solid red">[1](#锚点名)</sup>
@@ -55,7 +75,6 @@ cnpm run deploy:build;
 
 这里有一个脚注[^脚注ID2]。
 
-@import "index.styl"
 
 <font style="background: linear-gradient( to right, #ff1616, #ff7716);padding:10px">太阳太阳，给我们带来，七色光彩</font>
 <p style="text-indent: 0;
@@ -69,24 +88,13 @@ cnpm run deploy:build;
 段落由一句或多句连续的文本组成，通过一个或多个空行分隔。（空行可能是没有任何内容的行、或者是只包含空行或制表符的行，多个空行也会显示成一个空行）。一个普通的段落不应该有空格或者制表符作为缩进。
 </p>
 
-<p class="font30">30号字体看看怎么样</p>
+
+::: details 
+<img style="margin-top:10px" :src="$withBase('/vuepress/01.jpg')" alt="暂无图片">
+<br>
+:::
 
 
-这是一个链接到谷歌的[^脚注]。
-
-[^脚注]: 1212121
-
-[^脚注ID1]: 此处是 **脚注** 的 *文本内容*。
-[^脚注ID2]: 此处是 **脚注** 的 *文本内容*。
-```html
-[#脚注ID1]: 此处是 **脚注** 的 *文本内容*。
-[#脚注ID2]: 此处是 **脚注** 的 *文本内容*。
-#ss
-```
-
-
-
-<TOC :include-level="[1, 6]" />
 
 
 # 一级
@@ -97,4 +105,3 @@ cnpm run deploy:build;
 ###### 六级
 
 
-[[toc]] 
