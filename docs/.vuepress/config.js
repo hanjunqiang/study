@@ -14,21 +14,21 @@ module.exports = {
 /* ----------------------------------------------------------------------------------------------
                                              这里是鼠标选中
   ----------------------------------------------------------------------------------------------*/
-    // 引入jquery
-    ["script", {
-      "language": "javascript",
-      "type": "text/javascript",
-      "src": "https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"
-    }],
-    // 引入鼠标点击脚本
-    ["script", {
-      "language": "javascript",
-      "type": "text/javascript",
-      "src": "/js/MouseClickEffect.js"
-    }]
+    // // 引入jquery
+    // ["script", {
+    //   "language": "javascript",
+    //   "type": "text/javascript",
+    //   "src": "https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"
+    // }],
+    // // 引入鼠标点击脚本
+    // ["script", {
+    //   "language": "javascript",
+    //   "type": "text/javascript",
+    //   "src": "/js/MouseClickEffect.js"
+    // }]
   ],
 
-  // theme: 'vdoing',
+  theme: 'vdoing',
 
   /* ----------------------------------------------------------------------------------------------
                                              插件
@@ -42,14 +42,14 @@ module.exports = {
       showInMobile: false // whether to display on the mobile side, default: false.
     }],
     // 背景有个彩带(可能被内容遮盖住)
-    [
-      "ribbon",
-      {
-        size: 90,     // width of the ribbon, default: 90
-        opacity: 0.8, // opacity of the ribbon, default: 0.3
-        zIndex: -1    // z-index property of the background, default: -1
-      }
-    ],
+    // [
+    //   "ribbon",
+    //   {
+    //     size: 90,     // width of the ribbon, default: 90
+    //     opacity: 0.8, // opacity of the ribbon, default: 0.3
+    //     zIndex: -1    // z-index property of the background, default: -1
+    //   }
+    // ],
     ['go-top'],
     // 音乐插件
     ['meting', {
@@ -121,6 +121,10 @@ module.exports = {
           { text: 'css', link: '/css/' },
           { text: 'vue', link: '/vue/' },
           { text: 'vant', link: '/vant/' },
+          { text: 'weex', link: '/weex/' },
+          { text: 'uniapp', link: '/uniapp/' },
+          { text: 'small-program', link: '/small-program/' },
+
         ]
       },
       {
@@ -134,12 +138,6 @@ module.exports = {
           }
         ]
       },
-      {
-        text: 'weex',
-        items: [
-          { text: 'weex', link: '/weex/' },
-        ]
-      },
       { text: 'Vuepress', link: '/vuepress/' }, // 外部链接    
       { text: 'Github', link: 'https://github.com' }, // 外部链接    
     ],
@@ -150,6 +148,22 @@ module.exports = {
     */
     sidebar: {
       '/web/': ['/'],
+      '/small-program/':[
+        '/small-program/',
+        // {
+        //   path: '/small-program/小程序基础'
+        // }
+      ],
+      '/uniapp/': [
+        {
+          title:'学习资源',
+          path : '/uniapp/'
+        },
+        {
+          title:'基础',
+          path:'/uniapp/uniapp基础知识'
+        }
+      ],
       '/vant/': [
         {
           title: '目录:',
