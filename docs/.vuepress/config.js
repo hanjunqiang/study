@@ -138,6 +138,12 @@ module.exports = {
           }
         ]
       },
+      {
+        text: '工具',
+        items: [
+          { text: 'office', link: '/office/' },
+        ]
+      },
       { text: 'Vuepress', link: '/vuepress/' }, // 外部链接    
       { text: 'Github', link: 'https://github.com' }, // 外部链接    
     ],
@@ -148,6 +154,16 @@ module.exports = {
     */
     sidebar: {
       '/web/': ['/'],
+      '/office/': [
+        {
+          title:'学习资源',
+          path:'/office/'
+        },
+        {
+          title:'word',
+          path:'/office/word'
+        },
+      ],
       '/small-program/':[
         '/small-program/',
         // {

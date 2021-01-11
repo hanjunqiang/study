@@ -1,5 +1,5 @@
 ---
-title: 学习资源
+title: uniapp学习资源
 date: 2021-01-10 14:57:10
 permalink: /pages/813d9c/
 categories:

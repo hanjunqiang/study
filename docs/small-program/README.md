@@ -1,5 +1,5 @@
 ---
-title: 学习资源
+title: small-program学习资源
 date: 2021-01-10 17:48:48
 permalink: /pages/97a8f5/
 categories:
