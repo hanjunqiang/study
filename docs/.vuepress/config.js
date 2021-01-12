@@ -28,7 +28,7 @@ module.exports = {
     }]
   ],
 
-  // theme: 'vdoing',
+  theme: 'vdoing',
 
   /* ----------------------------------------------------------------------------------------------
                                              插件
@@ -121,6 +121,8 @@ module.exports = {
           { text: 'css', link: '/css/' },
           { text: 'vue', link: '/vue/' },
           { text: 'vant', link: '/vant/' },
+          { text: 'weex', link: '/weex/' },
+          { text: 'uniapp', link: '/uniapp/' },
         ]
       },
       {
@@ -135,9 +137,9 @@ module.exports = {
         ]
       },
       {
-        text: 'weex',
+        text: '工具',
         items: [
-          { text: 'weex', link: '/weex/' },
+          { text: 'word', link: '/office/' },
         ]
       },
       { text: 'Vuepress', link: '/vuepress/' }, // 外部链接    
@@ -150,6 +152,16 @@ module.exports = {
     */
     sidebar: {
       '/web/': ['/'],
+      '/office/': [
+          {
+            title:'学习资源',
+            path:'/office/'
+          },
+          {
+            title:'word',
+            path:'/office/word'
+          },
+        ],
       '/vant/': [
         {
           title: '目录:',
@@ -203,14 +215,9 @@ module.exports = {
       ],
       '/vuepress/': [
         {
-          title: '目录:',
+          title: 'VuePress',
           children: [
-            {
-              title:'相关资源',
-              children: [
-                '/vuepress/01',
-              ]
-            }
+            '/vuepress/01',
           ]
         },
       ],
@@ -252,6 +259,12 @@ module.exports = {
           ]
         },
       ],
+      'uniapp': [
+        {
+          'title':'学习资源',
+          'path':'/uniapp/'
+        }
+      ]
     }
   }
 };
