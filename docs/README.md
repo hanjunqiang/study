@@ -1,13 +1,46 @@
 ---
 home: true
 heroImage: /logo.jpg
-actionText: 快速上手 →
-actionLink: /zh/guide/
+# actionText: Home Page ! →
+# actionLink: /office/
 features:
-- title: 简洁至上
-  details: 以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。
-- title: Vue驱动
-  details: 享受 Vue + webpack 的开发体验，在 Markdown 中使用 Vue 组件，同时可以使用 Vue 来开发自定义主题。
-- title: 高性能
-  details: VuePress 为每个页面预渲染生成静态的 HTML，同时在页面被加载的时候，将作为 SPA 运行。
+- title: Truth One
+  details: 己所不欲, 勿施于人.
+- title: Truth Two
+  details: 别太把自己当回事, 别太不把自己当回事.
+- title: Truth Three
+  details: 故天将降大任于是人也，必先苦其心志，劳其筋骨，饿其体肤，空乏其身，行拂乱其所为，所以动心忍性，曾益其所不能。
 ---
+
+Learning resource
+<hr>
+<!-- 学习资源tags -->
+<v-tags :tagsData=tagsData> </v-tags>
+
+To do list
+<hr>
+- <vh1 title='整理电脑中的文件夹,然后下载一个导出文件目录结构的软件,把目录结构放到blog中,方便快速找文件以及查看有什么文件'></vh1>
+
+
+
+
+<script>
+  export default {
+    data() {
+      return {
+        tagsData:[
+          {
+            'key': '技术胖教程-图文版',
+            'value': 'https://juejin.cn/post/6844904056939347976'
+          }
+        ],
+        todoList:[
+          {
+            'key': '',
+            'value': ''
+          }
+        ]
+      }
+    }
+  }
+</script>

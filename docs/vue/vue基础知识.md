@@ -1,5 +1,5 @@
 ---
-title: 01
+title: vue基础知识
 date: 2020-06-26 14:06:27
 permalink: /pages/035b78/
 categories:

@@ -1,5 +1,5 @@
 ---
-title: 01
+title: 启动图&logo
 date: 2020-06-17 00:34:22
 permalink: /pages/f82fdc/
 categories:

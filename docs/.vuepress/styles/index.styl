@@ -1,40 +1,15 @@
-// 侧边栏样式
-// 左侧侧边栏标题
-.sidebar > .sidebar-links > li > a.sidebar-link {
-  font-size: 1.5em !important;
-  margin-left: -1em;
-}
-// 右侧文章标题导航栏
-a.sidebar-link {
-  font-size: 16px !important;
-}
-// 左侧边栏标题字体大小样式
-.sidebar-heading span{
-    font-size: 1.2em;
-    font-weight: bold;
+// demo模块图标颜色
+body .vuepress-plugin-demo-block__wrapper
+  &,.vuepress-plugin-demo-block__display
+    border-color rgba(160,160,160,.3)
+  .vuepress-plugin-demo-block__footer:hover
+    .vuepress-plugin-demo-block__expand::before
+      border-top-color: $accentColor !important;
+      border-bottom-color: $accentColor !important;
+    svg
+      fill: $accentColor !important;
 
+// 隐藏首页底部的 Theme by vdoing
+div .footer {
+  visibility: hidden;
 }
-.sidebar-heading.open span{
-    font-weight: bold;
-}
-
-
-// 左侧边栏展开文章的字体大小
-a.sidebar-link.active {
-    color: #2E8B57 !important;
-    font-size: 14px !important;
-    background: #c3d4b742 !important;
-}
-.sidebar-sub-headers a.sidebar-link {
-    margin: 0 1rem 0 1rem !important;
-}
-// 分组的透明度修改，未生效
-.sidebar-group.is-sub-group > .sidebar-heading:not(.clickable){
-    opacity: 0.5;
-}
-
-// 去除左上角标题，作者，标签等
-.page .page-title {
-    display: none;
-}
-

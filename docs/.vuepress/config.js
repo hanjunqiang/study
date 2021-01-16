@@ -8,12 +8,12 @@ module.exports = {
   // 注入到当前页面的 HTML <head> 中的标签
   head: [
     ['link', { rel: 'icon', href: '/logo.jpg' }], // 增加一个自定义的 favicon(网页标签的图标)
-      // 移动栏优化
+    // 移动栏优化
     ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }],
 
-/* ----------------------------------------------------------------------------------------------
-                                             这里是鼠标选中
-  ----------------------------------------------------------------------------------------------*/
+    /* ----------------------------------------------------------------------------------------------
+                                                 这里是鼠标选中
+      ----------------------------------------------------------------------------------------------*/
     // // 引入jquery
     // ["script", {
     //   "language": "javascript",
@@ -33,7 +33,7 @@ module.exports = {
   /* ----------------------------------------------------------------------------------------------
                                              插件
   ----------------------------------------------------------------------------------------------*/
-  plugins:[
+  plugins: [
     // 代码复制弹窗插件
     ['one-click-copy', {
       copySelector: ['div[class*="language-"] pre', 'div[class*="aside-code"] aside'], // String or Array
@@ -50,7 +50,72 @@ module.exports = {
     //     zIndex: -1    // z-index property of the background, default: -1
     //   }
     // ],
-    ['go-top'],
+    //本地插件(会和查看大图冲突)
+    [require('./plugins/love-me'), { // 鼠标点击爱心特效
+      // color: '#11a8cd', // 爱心颜色，默认随机色
+      excludeClassName: 'theme-vdoing-content' // 要排除元素的class, 默认空''
+    }],
+    [
+      '@vuepress/last-updated', // "上次更新"时间格式
+      {
+        transformer: (timestamp, lang) => {
+          const dayjs = require('dayjs') // https://day.js.org/
+          return dayjs(timestamp).format('YYYY/MM/DD, HH:mm:ss')
+        },
+      },
+    ],
+    [
+      'thirdparty-search',
+      {
+        thirdparty: [
+          // 可选，默认 []
+          {
+            title: '在MDN中搜索',
+            frontUrl: 'https://developer.mozilla.org/zh-CN/search?q=', // 搜索链接的前面部分
+            behindUrl: '', // 搜索链接的后面部分，可选，默认 ''
+          },
+          {
+            title: '在Runoob中搜索',
+            frontUrl: 'https://www.runoob.com/?s=',
+          },
+          {
+            title: '在Vue API中搜索',
+            frontUrl: 'https://cn.vuejs.org/v2/api/#',
+          },
+          {
+            title: '在简书中搜索',
+            frontUrl: 'https://www.jianshu.com/search?q=',
+          },
+          {
+            title: '通过CSDN搜索本站的',
+            frontUrl: 'https://so.csdn.net/so/search/s.do?q=',
+          },
+          {
+            title: '通过掘金搜索本站的',
+            frontUrl: 'https://juejin.cn/search?query=',
+          },
+          {
+            title: '通过Git搜索本站的',
+            frontUrl: 'https://github.com/search?q=',
+          },
+          {
+            title: '通过百度搜索本站的',
+            frontUrl: 'https://www.baidu.com/s?wd=',
+          },
+        ],
+      },
+    ],
+    [
+      'vuepress-plugin-zooming', // 放大图片
+      {
+        selector: '.theme-vdoing-content img:not(.no-zoom)', // 排除class是no-zoom的图片
+        options: {
+          bgColor: 'rgba(0,0,0,0.6)',
+        },
+      },
+    ],
+    // 滚动
+    // ['go-top'],
     // 音乐插件
     ['meting', {
       //metingApi: "https://meting.sigure.xyz/api/music",
@@ -60,7 +125,7 @@ module.exports = {
         // 读取歌单
         type: "playlist",
         mid: "696441716",
-      },          
+      },
       // 不配置该项的话不会出现全局播放器
       aplayer: {
         // 吸底模式
@@ -69,7 +134,7 @@ module.exports = {
         // 自动播放
         autoplay: false,
         // 歌曲栏折叠
-        listFolded:true,
+        listFolded: true,
         // 颜色
         theme: '#f9bcdd',
         // 播放顺序为随机
@@ -79,7 +144,7 @@ module.exports = {
         // 关闭歌词显示
         lrcType: 0
       },
-      mobile :{
+      mobile: {
         // 手机端去掉cover图
         cover: false,
       }
@@ -96,7 +161,7 @@ module.exports = {
     lineNumbers: true // 代码块显示行号
   },
   dest: './dist',
- 
+
   // themeConfig: {
   //   sidebarDepth: 2, // e'b将同时提取markdown中h2 和 h3 标题，显示在侧边栏上。
   //   lastUpdated: 'Last Updated' // 文档更新时间：每个文件git最后提交的时间
@@ -112,12 +177,11 @@ module.exports = {
     // },
     nav: [
       { text: '主页', link: '/' },
-      { text: '安卓', link: '/android/' }, // 外部链接
-      // 下拉列表
       {
         text: '前端',
-        link: '/web/',
+        // link: '/web/',
         items: [
+          { text: 'html', link: '/html/' },
           { text: 'css', link: '/css/' },
           { text: 'vue', link: '/vue/' },
           { text: 'vant', link: '/vant/' },
@@ -127,6 +191,7 @@ module.exports = {
 
         ]
       },
+      { text: '安卓', link: '/android/' }, // 外部链接
       {
         text: 'iOS',
         items: [
@@ -142,6 +207,7 @@ module.exports = {
         text: '工具',
         items: [
           { text: 'office', link: '/office/' },
+          { text: 'plugin', link: '/plugin/' },
         ]
       },
       { text: 'Vuepress', link: '/vuepress/' }, // 外部链接    
@@ -154,17 +220,20 @@ module.exports = {
     */
     sidebar: {
       '/web/': ['/'],
+      '/oc/': ['/oc/'],
+      '/swift/': ['/swift/'],
+      '/plugin/': ['/plugin/'],
       '/office/': [
         {
-          title:'学习资源',
-          path:'/office/'
+          title:'office学习资源',
+          path: '/office/'
         },
         {
-          title:'word',
-          path:'/office/word'
+          title: 'word常见用法',
+          path: '/office/word'
         },
       ],
-      '/small-program/':[
+      '/small-program/': [
         '/small-program/',
         // {
         //   path: '/small-program/小程序基础'
@@ -172,113 +241,108 @@ module.exports = {
       ],
       '/uniapp/': [
         {
-          title:'学习资源',
-          path : '/uniapp/'
+          title: 'uniapp学习资源',
+          path: '/uniapp/'
         },
         {
-          title:'基础',
-          path:'/uniapp/uniapp基础知识'
-        }
+          title: 'uniapp基础知识',
+          path: '/uniapp/uniapp基础知识'
+        },
+        {
+          title: 'uniapp-Bugs集合',
+          path: '/uniapp/uniapp-Bugs集合'
+        },
       ],
       '/vant/': [
         {
-          title: '目录:',
+          title: "vant基础",
           children: [
             {
-              title:'Bug集合',
-              children: [
-                '/vant/01',
-              ]
-            },
+              title: '基础知识',
+              path: '/vant/基础知识',
+            }
           ]
         },
       ],
       '/css/': [
         {
-          title: '目录:',
+          title: 'css基础',
           children: [
             {
-              title:'CSS',
-              children: [
-                '/css/01',
-              ]
+              title: '基础知识',
+              path: '/css/01',
             }
           ]
         },
       ],
       '/vue/': [
         {
-          title: '目录:',
+          title: 'vue基础',
           children: [
             {
-              title:'新项目-配置',
-              children: [
-                '/vue/',
-              ]
+              title: 'vue基础知识',
+              path: '/vue/vue基础知识',
             },
             {
-              title:'修饰符',
-              children: [
-                '/vue/01',
-              ]
+              title: 'vuex',
+              path: '/vue/vuex',
             },
             {
-              title:'常见问题',
-              children: [
-                '/vue/02',
-              ]
+              title: '常见问题',
+              path: '/vue/常见问题',
             },
           ]
         },
       ],
       '/vuepress/': [
         {
-          title: '目录:',
+          title: 'VuePress基础',
           children: [
             {
-              title:'相关资源',
-              children: [
-                '/vuepress/01',
-              ]
+              title: '常见用法',
+              path:'/vuepress/01',
+                
             }
           ]
         },
       ],
       '/weex/': [
         {
-          title: '目录:',
+          title: 'weex基础',
           children: [
             {
-              title:'科蓝平台',
-              children: [
-                '/weex/01',
-              ]
+              title: '科蓝平台',
+              path: '/weex/科蓝平台',
             }
           ]
         },
       ],
       '/ios/': [
         {
-          title: '目录:',
+          title: '基础知识:',
           children: [
             {
-              title:'启动图',
-              children: [
-                '/ios/01',
-              ]
+              title: '宏定义',
+              path: '/ios/宏定义',
             },
+          ]
+        },
+        {
+          title:'常见用法',
+          children:[
             {
-              title:'宏定义',
-              children: [
-                '/ios/02',
-              ]
-            },
+              title:'启动图logo',
+              path:'/ios/启动图logo',
+            }
+          ]
+        },
+        {
+          title: 'Bug集合',
+          children: [
             {
-              title:'Bug集合',
-              children: [
-                '/ios/03',
-              ]
-            },
+              title:'weex-Bugs',
+              path:'/ios/weex-Bugs',
+            }
           ]
         },
       ],
