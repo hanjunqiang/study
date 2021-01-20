@@ -206,6 +206,7 @@ module.exports = {
       {
         text: '工具',
         items: [
+          { text: 'markdown', link: '/markdown/' },
           { text: 'office', link: '/office/' },
           { text: 'plugin', link: '/plugin/' },
         ]

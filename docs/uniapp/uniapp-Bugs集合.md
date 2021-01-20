@@ -41,3 +41,11 @@ npm install -D babel-loader@7 babel-core babel-preset-env webpack
 
 <br>
 :::
+
+::: details <span style='color:red'>image或uni-list中的左侧缩略图,加载网络图片无法显示</span>
+
+<vh2 title='解决方案:'></vh2>
+<vh3 title='使用真机运行'></vh3>
+
+<br>
+:::

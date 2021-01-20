@@ -254,6 +254,8 @@ pages数组数组中第一项表示应用启动页
 | path  | String | 是    | 启动页面路径                                   |
 | query | String | 否    | 启动参数，可在页面的 [onLoad](https://uniapp.dcloud.io/use?id=%e9%a1%b5%e9%9d%a2%e7%94%9f%e5%91%bd%e5%91%a8%e6%9c%9f) 函数里获得 |
 
+<img style="margin-top:10px" :src="$withBase('/uniapp/condition启动模式.png')" alt="暂无图片">
+
 ## 组件的基本使用
 
 uni-app提供了丰富的基础组件给开发者，开发者可以像搭积木一样，组合各种组件拼接称自己的应用
@@ -1378,3 +1380,7 @@ components: {uniGrid,uniGridItem}
 </uni-grid>
 ```
 
+## [easycom模式](https://uniapp.dcloud.io/collocation/pages?id=easycom)
+<vh2 title='HBuilderX 2.5.5起支持easycom组件模式。'></vh2>
+<vt2 title='传统vue组件，需要安装、引用、注册，三个步骤后才能使用组件。
+easycom将其精简为一步。 只要组件安装在项目的components目录下，并符合components/组件名称/组件名称.vue目录结构。就可以不用引用、注册，直接在页面中使用。'></vt2>

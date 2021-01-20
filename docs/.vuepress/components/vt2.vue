@@ -11,7 +11,10 @@ export default {
 </script>
 <style scoped>
 .font-t2 {
-  color: rgb(255, 255, 255);
+  color: black;
   font-size: 14px;
+  background-color: rgba(238, 237, 237, 0.836);
+  padding: 5px;
+  border-radius: 10px;
 }
 </style>

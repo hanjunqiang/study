@@ -27,7 +27,7 @@ tags:
 - <b>因为uni-app是逻辑和渲染分离的。渲染层，在app端提供了两套排版引擎：小程序方式的webview渲染，和weex方式的原生渲染。</b><br/>
 - <b>在App端，如果使用vue页面，则使用webview渲染；如果使用nvue页面(native vue的缩写)，则使用原生渲染。</b><br/>
 
-- <b>一个App中可以同时使用两种页面，比如首页使用nvue，二级页使用vue页面，hello uni-app示例就是如此。(应该不支持在一个页面中互相嵌套)</b><br/>
+- <b>一个App中可以同时使用两种页面，比如首页使用nvue，二级页使用vue页面，hello uni-app示例就是如此。(nvue页面里引用.vue后缀的组件，会按照nvue方式使用原生渲染，其中不支持的css会被忽略掉。)</b><br/>
 - <b>虽然nvue也可以多端编译，输出H5和小程序，但nvue的css写法受限，所以如果你不开发App，那么不需要使用nvue。</b><br>
 以往的 weex ，有个很大的问题是它只是一个高性能的渲染器，没有足够的API能力（比如各种push sdk集成、蓝牙等能力调用），使得开发时非常依赖原生工程师协作，开发者本来想节约成本，结果需要前端、iOS、Android 3拨人开发，适得其反。 nvue 解决了这个问题，让前端工程师可以直接开发完整 App，并提供丰富的插件生态和云打包。这些组合方案，帮助开发者切实的提高效率、降低成本。
 
@@ -54,9 +54,13 @@ tags:
               'value': 'https://uniapp.dcloud.io/collocation/pages'
             },
             {
-              'key': '视频教程',
+              'key': '视频教程-帝莎编程',
               'value': 'https://space.bilibili.com/379063075?spm_id_from=333.788.b_765f7570696e666f.1'
-            }
+            },
+            {
+              'key': '视频教程-玩儿派',
+              'value': 'https://www.bilibili.com/video/BV1CC4y1476y?from=search&seid=17446486141704539433'
+            },
           ],
           tagsData2:[
             {
