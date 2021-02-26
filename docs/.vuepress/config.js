@@ -209,10 +209,24 @@ module.exports = {
           { text: 'markdown', link: '/markdown/' },
           { text: 'office', link: '/office/' },
           { text: 'plugin', link: '/plugin/' },
+          { text: 'MacOS', link: '/macos/' },
         ]
       },
       { text: 'Vuepress', link: '/vuepress/' }, // 外部链接    
-      { text: 'Github', link: 'https://github.com' }, // 外部链接    
+      { 
+        text: '我的', 
+        items: [
+          {
+            text: '电脑文件',
+            link: '/macfile/'
+          },
+          {
+            text: 'Github',
+            link: 'https://github.com'
+          },
+        ]
+      }, // 我的    
+      // { text: 'Github', link: 'https://github.com' }, // 外部链接    
     ],
 
     /* 
@@ -224,6 +238,17 @@ module.exports = {
       '/oc/': ['/oc/'],
       '/swift/': ['/swift/'],
       '/plugin/': ['/plugin/'],
+      '/macfile/': ['/macfile/'],
+      '/macos/': [
+        {
+          title:'macOS常用网站',
+          path: '/macos/'
+        },
+        {
+          title:'macOS命令',
+          path: '/macos/mac命令'
+        }
+      ],
       '/office/': [
         {
           title:'office学习资源',
@@ -267,14 +292,13 @@ module.exports = {
       ],
       '/css/': [
         {
-          title: 'css基础',
-          children: [
-            {
-              title: '基础知识',
-              path: '/css/01',
-            }
-          ]
+          title: 'css资源',
+          path: '/css/',
         },
+        {
+          title: '基础知识',
+          path: '/css/css基础',
+        }
       ],
       '/vue/': [
         {
@@ -291,6 +315,10 @@ module.exports = {
             {
               title: '常见问题',
               path: '/vue/常见问题',
+            },
+            {
+              title: 'vue插件',
+              path: '/vue/vue-plugin',
             },
           ]
         },

@@ -16,13 +16,13 @@
   "devDependencies": {
     "dayjs": "^1.10.3",
     "gh-pages": "^3.1.0",
+    "vuepress-plugin-demo-block": "^0.7.2",
     "vuepress-plugin-go-top": "^1.0.4",
     "vuepress-plugin-meting": "^0.1.1",
     "vuepress-plugin-one-click-copy": "^1.0.2",
     "vuepress-plugin-ribbon": "^1.0.2",
-    "vuepress-plugin-zooming": "^1.1.7",
     "vuepress-plugin-thirdparty-search": "^1.0.2",
-    "vuepress-plugin-demo-block": "^0.7.2",
+    "vuepress-plugin-zooming": "^1.1.7",
     "vuepress-theme-vdoing": "^1.7.2"
   }
 }

@@ -187,6 +187,7 @@ pages数组数组中第一项表示应用启动页
 
 - 当设置 position 为 top 时，将不会显示 icon
 - tabBar 中的 list 是一个数组，只能配置最少2个、最多5个 tab，tab 按数组的顺序排序。
+- 原生的tabbar有且只有一个且在首页。二级页如需的tab，需自行编写view来实现。
 
 **属性说明：**
 
@@ -394,6 +395,8 @@ uni-app中的组件，就像 `HTML` 中的 `div` 、`p`、`span` 等标签的作
          src: url('~@/static/iconfont.ttf');
      }
     ```
+- 阿里iconfront需要导入的文件
+<img style="margin-top:10px" :src="$withBase('/uniapp/iconfont.png')" alt="暂无图片">
 
 + 如何使用scss或者less
 

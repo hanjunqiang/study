@@ -20,9 +20,15 @@ Learning resource
 To do list
 <hr>
 - <vh1 title='整理电脑中的文件夹,然后下载一个导出文件目录结构的软件,把目录结构放到blog中,方便快速找文件以及查看有什么文件'></vh1>
-
-
-
+<vh1 title='微信公众号文章'></vh1>
+```js
+https://weixin.sogou.com/
+史上最强vue总结，万字长文
+Vue知识总结来啦，你还不快来
+一篇Vue最佳实践总结
+实战总结 Vue 学习看这一篇就够了
+Vue 2.0 学习总结，精华全在这里了
+```
 
 <script>
   export default {
