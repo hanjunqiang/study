@@ -309,6 +309,10 @@ module.exports = {
               path: '/vue/vue基础知识',
             },
             {
+              title: '官方文档解读',
+              path: '/vue/官方文档解读',
+            },
+            {
               title: 'vuex',
               path: '/vue/vuex',
             },

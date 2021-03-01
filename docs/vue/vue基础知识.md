@@ -8,13 +8,6 @@ tags:
   - 
 ---
 
-## Vue的创建
-一个简单的 Vue 实例只需要四步即可
-::: details <span style='color:red'>创建vue实例</span>
-<img style="margin-top:10px" :src="$withBase('/vue/vue创建.png')" alt="暂无图片">
-<br>
-:::
-
 ## String 字符串用法
 ## 字符串中是否包含searchValue, 第二个参数可以忽略,表示从第几位开始检查.
 ::: details <span style='color:red'>str.indexOf(searchValue [, fromIndex])</span>
@@ -67,7 +60,40 @@ tags:
 <br>
 :::
 
-## 全局引入自定义组件
+## 全局自动注册自定义组件
+::: details <span style='color:red'>全局自动注册自定义组件</span>
+<img style="margin-top:10px" :src="$withBase('/vue/全局自动注册组件.jpg')" alt="暂无图片">
+
+```js
+//(globalComponents.js)
+import Vue from 'vue'
+function changeStr (str) {
+  return str.charAt(0).toUpperCase() + str.slice(1)
+}
+
+//获取当前js同级的所有xxx.vue文件
+const requireComponent = require.context('./', false, /\.vue$/)
+// 查找同级目录下以vue结尾的组件
+const install = () => {
+  //输出: "./HelloWorld.vue", "./VFor.vue", "./VTags.vue", "./Vhr.vue"
+  console.log(requireComponent.keys()); 
+  requireComponent.keys().forEach(fileName => {
+    let config = requireComponent(fileName)
+    console.log(config) 
+    // 比如: ./VTags.vue 用正则替换./和.vue,拿到VTags
+    let componentName = changeStr(
+      fileName.replace(/^\.\//, '').replace(/\.\w+$/, '')
+    )
+    Vue.component(componentName, config.default || config)
+  })
+}
+export default {
+  install // 对外暴露install方法
+}
+```
+:::
+
+## 全局手动注册自定义组件
 ::: details <span style='color:red'>方式1: 在main.js中直接注册组件</span>
 <img style="margin-top:10px" :src="$withBase('/vue/全局引入组件1.jpg')" alt="暂无图片">
 <br>
