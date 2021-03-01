@@ -4,12 +4,20 @@ heroImage: /logo.jpg
 # actionText: Home Page ! →
 # actionLink: /office/
 features:
-- title: Truth One
-  details: 己所不欲, 勿施于人.
-- title: Truth Two
-  details: 别太把自己当回事, 别太不把自己当回事.
-- title: Truth Three
+- title: 《论语》
+  details: 己所不欲, 勿施于人。
+- title: 《生活》
+  details: 别太把自己当回事, 别太不把自己当回事。
+- title: 林徽因
+  details: 你若安好，便是晴天。
+- title: 《清华园日记》
+  details: 心里总觉得没事情做，其实事情多得很，只是不逼到时候，不肯下手而已。
+- title: 《知乎》
+  details: 如果你实在感觉她很忙，别追了，是人家没看上你而已。
+- title: 《生于忧患，死于安乐》
   details: 故天将降大任于是人也，必先苦其心志，劳其筋骨，饿其体肤，空乏其身，行拂乱其所为，所以动心忍性，曾益其所不能。
+- title: 莫言
+  details: 一个人，风尘仆仆地活在这个世界上，要为喜欢自己的人而活着。这才是最好的态度。不要在不喜欢你的人那里丢掉了快乐，然后又在喜欢自己的人这里忘记了快乐。
 ---
 
 Learning resource

@@ -23,6 +23,18 @@ tags:
 <br>
 :::
 
+## split() 方法使用指定的分隔符字符串将一个String对象分割成子字符串数组
+::: details <span style='color:red'>xxx</span>
+```js
+const str = 'The quick brown fox jumps over the lazy dog.';
+
+const words = str.split(' ');
+console.log(words[3]);
+// expected output: "fox"
+```
+<br>
+:::
+
 ## 字符串中替换字符
 ::: details <span style='color:red'>str.replace(regexp|substr, newSubStr|function)</span>
 ```js

@@ -217,6 +217,10 @@ module.exports = {
         text: '我的', 
         items: [
           {
+            text: '个人日志',
+            link: '/diary/'
+          },
+          {
             text: '电脑文件',
             link: '/macfile/'
           },
@@ -239,6 +243,12 @@ module.exports = {
       '/swift/': ['/swift/'],
       '/plugin/': ['/plugin/'],
       '/macfile/': ['/macfile/'],
+      '/diary/': [
+        {
+          title:'2021-2-28 日志',
+          path: '/diary/'
+        }
+      ],
       '/macos/': [
         {
           title:'macOS常用网站',

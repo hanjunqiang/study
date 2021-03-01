@@ -20,6 +20,18 @@ tags:
 <br>
 :::
 
+::: details <span style='color:red'>LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443</span>
+```js
+网络问题:
+1,访问https://github.com/是否可以访问GitHub
+2,切换手机流量,看是否可访问
+3,打开VPN,看是否可访问
+
+设置的代理导致:
+https://www.jianshu.com/p/f5172ef2f7c1
+```
+<br>
+:::
 
 <script>
   export default {
